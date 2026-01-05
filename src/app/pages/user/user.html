@@ -1,0 +1,42 @@
+<!-- src/app/pages/user/user.html -->
+
+<section class="page">
+  <div class="container">
+    <header class="head card">
+      <div>
+        <h1>Tu perfil</h1>
+        <p>Gestiona tu cuenta y tus chuletas guardadas.</p>
+      </div>
+
+      <button class="btn" (click)="logout()">Cerrar sesión</button>
+    </header>
+
+    <section class="card info" *ngIf="auth.user as u">
+      <div class="avatar">{{ u.username.slice(0, 1).toUpperCase() }}</div>
+      <div class="meta">
+        <div class="name">{{ u.username }}</div>
+        <div class="email">{{ u.email }}</div>
+      </div>
+    </section>
+
+    <section class="favHead">
+      <h2>Chuletas guardadas</h2>
+      <span class="pill">{{ favoritos.length }} guardadas</span>
+    </section>
+
+    <section class="grid">
+      <a class="fav card" *ngFor="let f of favoritos" [routerLink]="['/chuletas', f.id]">
+        <div class="top">
+          <span class="pill cat">{{ f.categoria }}</span>
+          <span class="star">★</span>
+        </div>
+        <div class="title">{{ f.titulo }}</div>
+        <div class="desc">{{ f.descripcion }}</div>
+      </a>
+    </section>
+
+    <p class="empty" *ngIf="favoritos.length === 0">
+      Aún no has guardado ninguna chuleta. Entra a una y pulsa “Guardar”.
+    </p>
+  </div>
+</section>

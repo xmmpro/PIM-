@@ -1,0 +1,131 @@
+.page {
+  padding: 48px 0 70px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: .2px;
+}
+
+.accent {
+  color: rgba(20, 227, 163, 1);
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, .65);
+  max-width: 70ch;
+}
+
+.search {
+  min-width: 260px;
+}
+
+.search input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, .04);
+  color: rgba(255, 255, 255, .92);
+  outline: none;
+}
+
+.search input:focus {
+  border-color: rgba(20, 227, 163, .35);
+  box-shadow: 0 0 0 1px rgba(20, 227, 163, .18);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ✅ Botón grande tipo quickref */
+.tile {
+  --h: 210;
+
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 2px;
+
+  padding: 16px 16px;
+  min-height: 82px;            /* 👈 más grande */
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, .10);
+  background:
+    linear-gradient(135deg,
+      hsla(var(--h), 65%, 55%, .22),
+      rgba(255, 255, 255, .04) 60%);
+
+  text-decoration: none;
+  color: rgba(255, 255, 255, .92);
+
+  transition: transform .10s ease, border-color .10s ease, box-shadow .10s ease;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(20, 227, 163, .28);
+  box-shadow:
+    0 0 0 1px rgba(20, 227, 163, .14),
+    0 18px 55px rgba(0, 0, 0, .55);
+}
+
+.tileIcon {
+  grid-row: 1 / span 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(0, 0, 0, .22);
+  border: 1px solid rgba(255, 255, 255, .10);
+
+  color: rgba(255, 255, 255, .88);
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.tileName {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tileHint {
+  color: rgba(255, 255, 255, .65);
+  font-size: 12.5px;
+}

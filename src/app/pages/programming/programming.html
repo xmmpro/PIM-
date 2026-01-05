@@ -1,0 +1,37 @@
+<section class="page">
+  <div class="container">
+    <div class="head">
+      <div>
+        <h1 class="title">
+          Lenguajes de <span class="accent">programación</span>
+        </h1>
+        <p class="subtitle">
+          Elige un lenguaje y entra a ver sus chuletas disponibles.
+        </p>
+      </div>
+
+      <div class="search">
+        <input
+          type="text"
+          [(ngModel)]="query"
+          placeholder="Buscar lenguaje..."
+          aria-label="Buscar lenguaje"
+        />
+      </div>
+    </div>
+
+    <div class="grid">
+      <a
+        class="tile"
+        *ngFor="let lang of filtered; trackBy: trackByKey"
+        [style.--h]="lang.h"
+        routerLink="/chuletas"
+        [queryParams]="{ categoria: lang.key }"
+      >
+        <div class="tileIcon">{{ lang.icon || '//' }}</div>
+        <div class="tileName">{{ lang.name }}</div>
+        <div class="tileHint">Ver chuletas →</div>
+      </a>
+    </div>
+  </div>
+</section>

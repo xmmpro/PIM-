@@ -1,0 +1,116 @@
+/* src/app/pages/categories/categories.scss */
+
+.page {
+  padding: 28px 0 10px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.head h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  font-weight: 950;
+}
+
+.head p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.block {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.blockHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.miniIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  background: rgba(20, 227, 163, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 950;
+}
+
+.block h3 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: -0.1px;
+  font-weight: 950;
+  color: rgba(230, 238, 252, 0.95);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(230, 238, 252, 0.92);
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+  transition: border-color 0.08s ease, background 0.08s ease, transform 0.08s ease;
+}
+
+.chip:hover {
+  border-color: rgba(20, 227, 163, 0.35);
+  background: rgba(20, 227, 163, 0.07);
+  transform: translateY(-1px);
+}
+
+.btnGo {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 227, 163, 0.25);
+  background: rgba(20, 227, 163, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 600;
+}
+.btnGo:hover {
+  border-color: rgba(20, 227, 163, 0.38);
+  box-shadow: 0 0 0 1px rgba(20, 227, 163, 0.14);
+}
+
+@media (min-width: 900px) {
+  .grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

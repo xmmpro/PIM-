@@ -1,0 +1,44 @@
+<!-- src/app/ficha-list/ficha-list.html -->
+
+<section class="page">
+  <div class="container">
+    <header class="head card">
+      <div class="left">
+        <h1>Chuletas</h1>
+        <p>Busca y filtra chuletillas rápidas de la comunidad.</p>
+      </div>
+
+      <div class="search">
+        <span class="icon">🔍</span>
+        <input
+          type="text"
+          [(ngModel)]="query"
+          placeholder="Buscar por título, tag o categoría…"
+          aria-label="Buscar"
+        />
+      </div>
+    </header>
+
+    <section class="filters">
+      <button
+        class="btn"
+        [class.primary]="cat === categoriaActiva"
+        *ngFor="let cat of categorias"
+        (click)="setCategoria(cat)"
+      >
+        {{ cat }}
+      </button>
+    </section>
+
+    <section class="grid">
+      <app-ficha-item
+        *ngFor="let ficha of fichasFiltradas"
+        [ficha]="ficha"
+      />
+    </section>
+
+    <p class="empty" *ngIf="fichasFiltradas.length === 0">
+      No hay resultados con esos filtros.
+    </p>
+  </div>
+</section>

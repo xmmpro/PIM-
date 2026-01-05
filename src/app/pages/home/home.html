@@ -1,0 +1,106 @@
+<!-- src/app/pages/home/home.html -->
+
+<section class="hero">
+  <div class="container heroInner">
+    <div class="logoBox">&lt;/&gt;</div>
+
+    <h1 class="title">Chuleta<span class="accent">rium</span></h1>
+
+    <p class="subtitle">
+      Por aquí tienes algunas <span>chuletillas</span> de la comunidad para<br />
+      aprender programación de forma rápida y sencilla.
+    </p>
+
+    <div class="cta">
+      <a class="btn primary" routerLink="/categories">Ver chuletas →</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">50+</div>
+        <div class="lbl">Chuletas</div>
+      </div>
+      <div class="stat">
+        <div class="num">10+</div>
+        <div class="lbl">Lenguajes</div>
+      </div>
+      <div class="stat">
+        <div class="num">100%</div>
+        <div class="lbl">Gratis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="grid3">
+    <article class="card block" *ngFor="let g of groups">
+      <div class="blockHead">
+        <div class="miniIcon">{{ g.icon }}</div>
+        <h3>{{ g.title }}</h3>
+      </div>
+
+      <div class="chips">
+        <span class="chip" *ngFor="let t of g.tags">{{ t }}</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="secHead">
+    <h2>Últimas chuletas</h2>
+    <a class="link2" routerLink="/chuletas">Ver todas →</a>
+  </div>
+
+  <div class="grid3">
+    <a class="card latest" *ngFor="let f of latest" [routerLink]="['/chuletas', f.id]">
+      <div class="top">
+        <span class="pill cat">#{{ f.categoria }}</span>
+        <span class="pill small">{{ f.tags?.[0] || 'Tip' }}</span>
+      </div>
+      <div class="t">{{ f.titulo }}</div>
+      <div class="d">{{ f.descripcion }}</div>
+    </a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="secHead">
+    <h2>Cómo funciona</h2>
+  </div>
+
+  <div class="grid3">
+    <article class="card step" *ngFor="let s of steps">
+      <div class="num">{{ s.n }}</div>
+      <div class="st">{{ s.title }}</div>
+      <div class="sd">{{ s.desc }}</div>
+    </article>
+  </div>
+</section>
+
+<!-- Banda full-width + container centrado -->
+<section class="snipBand">
+  <div class="container section">
+    <div class="snipTitle">
+      <span class="slashes">//</span>
+      <h2>Snippets destacados</h2>
+    </div>
+    <p class="snipSub">Ejemplos útiles y divertidos para que empieces a aprender</p>
+
+    <div class="grid3">
+      <article class="card snip" *ngFor="let s of snippets">
+        <div class="snipTop">
+          <span class="badge">{{ s.badge }}</span>
+          <span class="snipName">{{ s.title }}</span>
+        </div>
+
+        <pre class="code"><code>{{ s.code }}</code></pre>
+        <p class="snipDesc">{{ s.desc }}</p>
+      </article>
+    </div>
+    <div class="snipMore">
+      <a class="btn primary" routerLink="/snippets">Ver más snippets →</a>
+    </div>
+  </div>
+</section>

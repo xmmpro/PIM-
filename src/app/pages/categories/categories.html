@@ -1,0 +1,35 @@
+<!-- src/app/pages/categories/categories.html -->
+
+<section class="page">
+  <div class="container">
+    <header class="head">
+      <div>
+        <h1>Chuletas</h1>
+        <p>Explora por categoría y ve las fichas disponibles.</p>
+      </div>
+
+      <a class="btn primary" routerLink="/chuletas">Ver todas →</a>
+    </header>
+
+    <section class="grid3">
+      <article class="card block" *ngFor="let g of groups">
+        <div class="blockHead">
+          <div class="miniIcon">{{ g.icon }}</div>
+          <h3>{{ g.title }}</h3>
+        </div>
+
+        <div class="chips">
+          <a
+            class="chip"
+            *ngFor="let t of g.tags"
+            [routerLink]="['/chuletas']"
+            [queryParams]="{ cat: t }"
+          >
+            {{ t }}
+          </a>
+        </div>
+        <a class="btnGo" routerLink="/categories/programming">Ver lenguajes →</a>
+      </article>
+    </section>
+  </div>
+</section>
