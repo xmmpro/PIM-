@@ -1,1 +1,32 @@
-<p>header works!</p>
+<!-- src/app/shared/components/header/header.html -->
+<header class="topbar">
+  <div class="container inner">
+    <a class="brand" routerLink="/">
+      <span class="brandMark">&lt;</span>
+      <span class="brandText">Chuleta<span>rium</span></span>
+      <span class="brandMark">/&gt;</span>
+    </a>
+
+    <div class="search">
+      <span class="icon">🔍</span>
+      <input
+        type="text"
+        [(ngModel)]="q"
+        placeholder="Buscar chuleta o lenguaje..."
+        (keydown.enter)="goSearch()"
+      />
+    </div>
+
+    <div class="actions">
+      <ng-container *ngIf="auth.user as u; else loggedOut">
+        <a class="link" routerLink="/user">Hola, {{ u.username }}</a>
+        <button class="btn" type="button" (click)="logout()">Salir</button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <a class="link" routerLink="/login">Iniciar sesión</a>
+        <a class="btn primary" routerLink="/register">Registrarse</a>
+      </ng-template>
+    </div>
+  </div>
+</header>

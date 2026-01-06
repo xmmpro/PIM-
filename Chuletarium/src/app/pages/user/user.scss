@@ -1,0 +1,142 @@
+/* src/app/pages/user/user.scss */
+
+.page{
+  padding: 28px 0 10px;
+}
+
+.head{
+  padding: 18px;
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+
+.head h1{
+  margin: 0 0 6px;
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  font-weight: 950;
+}
+
+.head p{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.info{
+  margin-top: 14px;
+  padding: 16px;
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+
+.avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 950;
+  color: #04110d;
+  background: rgba(20,227,163,.92);
+}
+
+.name{
+  font-weight: 950;
+  letter-spacing: -0.2px;
+}
+
+.email{
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.favHead{
+  margin-top: 18px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.favHead h2{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.grid{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.fav{
+  padding: 16px;
+  text-decoration:none;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+  transition: transform .08s ease, border-color .08s ease, background .08s ease;
+}
+
+.fav:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.04);
+}
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cat{
+  background: rgba(20,227,163,.92);
+  color: #04110d;
+  border-color: transparent;
+  font-weight: 950;
+}
+
+.star{
+  color: rgba(20,227,163,.92);
+  font-size: 18px;
+}
+
+.title{
+  font-weight: 950;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.desc{
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.empty{
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (min-width: 900px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px){
+  .grid{ grid-template-columns: repeat(3, 1fr); }
+}

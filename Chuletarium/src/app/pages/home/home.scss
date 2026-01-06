@@ -1,0 +1,416 @@
+/* src/app/pages/home/home.scss */
+
+.hero {
+  padding: 64px 0 26px;
+}
+
+.heroInner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoBox {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  background: rgba(20, 227, 163, 0.08);
+  border: 1px solid rgba(20, 227, 163, 0.18);
+}
+
+.title {
+  margin: 0;
+  font-size: 64px;
+  letter-spacing: -1.4px;
+  font-weight: 950;
+}
+
+.accent {
+  color: var(--brand);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.45;
+  max-width: 64ch;
+}
+
+.subtitle span {
+  color: var(--brand);
+  font-weight: 900;
+}
+
+.cta {
+  margin-top: 10px;
+}
+
+.stats {
+  margin-top: 18px;
+  display: flex;
+  gap: 52px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat .num {
+  color: var(--brand);
+  font-weight: 950;
+  font-size: 22px;
+}
+
+.stat .lbl {
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.section {
+  padding: 44px 0;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/*  permitir shrink real en los hijos del grid */
+.grid3 > * {
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .grid3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.block {
+  padding: 18px;
+}
+
+.blockHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.miniIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  background: rgba(20, 227, 163, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 900;
+}
+
+.block h3 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: -0.1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.92;
+}
+
+.snipTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.slashes {
+  color: var(--brand);
+  font-weight: 950;
+  font-size: 22px;
+}
+
+.snipTitle h2 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.4px;
+}
+
+.snipSub {
+  margin: 10px 0 22px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.snip {
+  padding: 18px;
+}
+
+.snipTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 950;
+  color: #04110d;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(20, 227, 163, 0.95);
+}
+
+.snipName {
+  font-weight: 900;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.snipDesc {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.secHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.secHead h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  font-weight: 950;
+}
+
+.link2 {
+  color: rgba(230, 238, 252, 0.88);
+  text-decoration: none;
+  font-weight: 850;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.link2:hover {
+  opacity: 1;
+}
+
+.latest {
+  padding: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.08s ease, border-color 0.08s ease, background 0.08s ease;
+}
+
+.latest:hover {
+  transform: translateY(-2px);
+  border-color: rgba(20, 227, 163, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 1px rgba(20, 227, 163, 0.14), 0 18px 55px rgba(0, 0, 0, 0.55);
+}
+
+.latest .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.latest .cat {
+  background: rgba(20, 227, 163, 0.92);
+  color: #04110d;
+  border-color: transparent;
+  font-weight: 950;
+}
+
+.latest .small {
+  font-size: 11px;
+}
+
+.latest .t {
+  font-weight: 950;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.latest .d {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.step {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.step .num {
+  color: var(--brand);
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.step .st {
+  font-weight: 950;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.step .sd {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* ===== Snippets band (centrado perfecto) ===== */
+
+.snipBand {
+  width: 100%;
+  margin: 26px 0 0;
+  background: radial-gradient(900px 260px at 50% 0, rgba(20, 227, 163, 0.18), transparent 60%);
+
+  /* fuerza centrado */
+  display: flex;
+  justify-content: center;
+}
+
+.snipBand > .container {
+  width: 100%;
+}
+
+.snipTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.snipSub {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70ch;
+}
+
+.snip {
+  min-width: 0;
+}
+
+.snip .code {
+  max-width: 100%;
+}
+
+/* ===== Snippets PRO layout ===== */
+
+.grid3 {
+  align-items: stretch; /* asegura misma altura si las cards lo permiten */
+}
+
+.snip {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 260px; /* ajusta si quieres más/menos */
+  padding: 18px;
+}
+
+.snipTop {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.snipName {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Caja de código con altura uniforme */
+.snip .code {
+  flex: 1 1 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  height: 120px; /* 🔥 altura fija */
+  max-height: 120px;
+  overflow: auto; /* scroll interno */
+  padding-right: 10px; /* para que no choque con la scrollbar */
+}
+
+/* Descripción siempre abajo */
+.snipDesc {
+  margin-top: auto;
+}
+
+.snip {
+  transition: transform 0.08s ease, border-color 0.08s ease, background 0.08s ease,
+    box-shadow 0.08s ease;
+}
+
+.snip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(20, 227, 163, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 1px rgba(20, 227, 163, 0.14), 0 18px 55px rgba(0, 0, 0, 0.55);
+}
+
+.snipMore {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.latest,
+.snip {
+  will-change: transform;
+}
+
+@media (min-width: 900px) {
+  .grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .title {
+    font-size: 72px;
+  }
+}

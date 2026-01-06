@@ -1,0 +1,52 @@
+<section class="page">
+  <div class="container">
+    <header class="head">
+      <div>
+        <h1>Lenguajes de <span class="accent">programación</span></h1>
+        <p>Elige un lenguaje y entra a ver su ficha disponible.</p>
+      </div>
+
+      <div class="searchWrap">
+        <span class="searchIcon">⌕</span>
+        <input
+          class="search"
+          type="text"
+          placeholder="Buscar lenguaje..."
+          [(ngModel)]="query"
+          aria-label="Buscar lenguaje"
+        />
+      </div>
+    </header>
+
+    <section class="grid">
+      <ng-container *ngFor="let l of filtered">
+        <!-- SI HAY SLUG -> link directo a la ficha -->
+        <a
+          *ngIf="l.slug; else disabledCard"
+          class="langCard"
+          [routerLink]="['/chuletas', l.slug]"
+          [attr.data-tone]="l.tone"
+        >
+          <div class="logo">{{ l.short }}</div>
+
+          <div class="meta">
+            <h3>{{ l.name }}</h3>
+            <span class="cta">Ver ficha</span>
+          </div>
+        </a>
+
+        <!-- SI NO HAY SLUG -> deshabilitada -->
+        <ng-template #disabledCard>
+          <div class="langCard disabled" [attr.data-tone]="l.tone">
+            <div class="logo">{{ l.short }}</div>
+
+            <div class="meta">
+              <h3>{{ l.name }}</h3>
+              <span class="cta muted">Próximamente</span>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </section>
+  </div>
+</section>

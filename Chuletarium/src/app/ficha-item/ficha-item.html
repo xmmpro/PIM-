@@ -1,8 +1,14 @@
-<p>ficha-item works!</p>
-@if(ficha){
-    <div class="item_suelto">
-        <!---->
-        <p>{{ficha.titulo}}</p>
-        <p>{{ficha.autor}}</p>
-    </div>
-}
+<!-- src/app/ficha-item/ficha-item.html -->
+<a class="card item" [routerLink]="['/chuletas', ficha.id]">
+  <div class="top">
+    <span class="pill cat">{{ ficha.categoria }}</span>
+    <span class="pill lvl" *ngIf="ficha.nivel">{{ ficha.nivel }}</span>
+  </div>
+
+  <h3 class="title">{{ ficha.titulo }}</h3>
+  <p class="desc">{{ ficha.descripcion }}</p>
+
+  <div class="tags">
+    <span class="tag" *ngFor="let t of ficha.tags">{{ t }}</span>
+  </div>
+</a>

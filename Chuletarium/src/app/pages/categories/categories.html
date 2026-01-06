@@ -1,1 +1,41 @@
-<p>categories works!</p>
+<!-- src/app/pages/categories/categories.html -->
+<section class="page">
+  <div class="container">
+    <header class="head">
+      <div>
+        <h1>Chuletas</h1>
+        <p>Explora por categoría y ve las fichas disponibles.</p>
+      </div>
+
+      <a class="btn primary" routerLink="/chuletas">Ver todas</a>
+    </header>
+
+    <section class="grid">
+      <article class="card block" *ngFor="let g of groups">
+        <div class="blockHead">
+          <div class="miniIcon">{{ g.icon }}</div>
+          <div class="blockTxt">
+            <h3>{{ g.title }}</h3>
+            <p>{{ g.subtitle }}</p>
+          </div>
+        </div>
+
+        <div class="chips">
+          <a
+            class="chip"
+            *ngFor="let t of g.tags"
+            [routerLink]="['/chuletas']"
+            [queryParams]="{ cat: t }"
+          >
+            {{ t }}
+          </a>
+        </div>
+
+        <!-- BOTÓN CENTRADO Y SIN FLECHA -->
+        <div class="ctaRow">
+          <a class="btnGo" [routerLink]="g.route">{{ g.cta }}</a>
+        </div>
+      </article>
+    </section>
+  </div>
+</section>

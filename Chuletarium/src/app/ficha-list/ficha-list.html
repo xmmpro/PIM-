@@ -1,6 +1,43 @@
-<p>ficha-list works!</p>
+<section class="page">
+  <div class="container">
+    <header class="head card">
+      <div class="left">
+        <h1>Chuletas</h1>
+        <p>Busca y filtra chuletillas rápidas de la comunidad.</p>
+      </div>
 
-@for(item of fichas;track item.id){
+      <div class="search">
+        <span class="icon">⌕</span>
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          placeholder="Buscar por título, tag o categoría..."
+          aria-label="Buscar"
+        />
+      </div>
+    </header>
 
-    <app-ficha-item [data]="item"></app-ficha-item>
-}
+    <section class="filters">
+      <button
+        class="btn"
+        *ngFor="let cat of categorias"
+        [class.primary]="cat === categoriaActiva"
+        (click)="setCategoria(cat)"
+        type="button"
+      >
+        {{ cat }}
+      </button>
+    </section>
+
+    <section class="grid">
+      <app-ficha-item
+        *ngFor="let ficha of fichasFiltradas"
+        [ficha]="ficha"
+      />
+    </section>
+
+    <p class="empty" *ngIf="fichasFiltradas.length === 0">
+      No hay chuletas todavía para esta categoría.
+    </p>
+  </div>
+</section>

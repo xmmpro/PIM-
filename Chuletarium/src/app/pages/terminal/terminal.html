@@ -1,0 +1,48 @@
+<section class="page">
+  <div class="container">
+    <header class="head">
+      <div>
+        <h1>Consola y <span class="accent">sistema</span></h1>
+        <p>Comandos y utilidades para terminal y sistema operativo.</p>
+      </div>
+
+      <div class="searchWrap">
+        <span class="searchIcon">⌕</span>
+        <input
+          class="search"
+          type="text"
+          placeholder="Buscar..."
+          [(ngModel)]="query"
+          aria-label="Buscar"
+        />
+      </div>
+    </header>
+
+    <section class="grid">
+      <ng-container *ngFor="let l of filtered">
+        <a
+          *ngIf="l.slug; else disabledCard"
+          class="langCard"
+          [routerLink]="['/chuletas', l.slug]"
+          [attr.data-tone]="l.tone"
+        >
+          <div class="logo">{{ l.short }}</div>
+          <div class="meta">
+            <h3>{{ l.name }}</h3>
+            <span class="cta">Ver ficha</span>
+          </div>
+        </a>
+
+        <ng-template #disabledCard>
+          <div class="langCard disabled" [attr.data-tone]="l.tone">
+            <div class="logo">{{ l.short }}</div>
+            <div class="meta">
+              <h3>{{ l.name }}</h3>
+              <span class="cta muted">Próximamente</span>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </section>
+  </div>
+</section>

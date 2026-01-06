@@ -1,0 +1,111 @@
+/* src/app/shared/components/header/header.scss */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 7, 12, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  min-width: 180px; /* ayuda a balancear */
+}
+
+.brandMark {
+  color: var(--brand);
+  font-weight: 900;
+}
+
+.brandText {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.brandText span {
+  color: var(--brand);
+}
+
+.search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, 46vw);
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+}
+
+.search .icon {
+  opacity: 0.7;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  min-width: 180px; /* ayuda a balancear */
+}
+
+.link {
+  color: var(--text);
+  opacity: 0.85;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .search {
+    position: relative;
+    left: auto;
+    transform: none;
+    width: 100%;
+    order: 3;
+  }
+  .actions {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,66 @@
+<!-- src/app/pages/register/register.html -->
+
+<section class="page">
+  <div class="container">
+    <div class="auth card">
+      <div class="left">
+        <div class="logoBox">&lt;/&gt;</div>
+        <h1>Crear cuenta</h1>
+        <p>Regístrate para guardar tus chuletas favoritas y acceder a tu perfil.</p>
+
+        <div class="hint">
+          ¿Ya tienes cuenta?
+          <a routerLink="/login">Inicia sesión</a>
+        </div>
+      </div>
+
+      <form class="form" (ngSubmit)="onSubmit()">
+        <label class="field">
+          <span>Nombre de usuario</span>
+          <input
+            type="text"
+            [(ngModel)]="username"
+            name="username"
+            placeholder="pepito_dev"
+            required
+          />
+        </label>
+
+        <label class="field">
+          <span>Email</span>
+          <input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="tu@email.com"
+            required
+          />
+        </label>
+
+        <label class="field">
+          <span>Contraseña</span>
+          <div class="passWrap">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="••••••••"
+              required
+              minlength="6"
+            />
+            <button type="button" class="eye" (click)="showPassword = !showPassword">
+              {{ showPassword ? '🙈' : '👁️' }}
+            </button>
+          </div>
+        </label>
+        <div class="error" *ngIf="error">{{ error }}</div>
+
+        <button class="btn primary full" type="submit">Registrarse →</button>
+
+        <p class="small">
+          Consejo: usa una contraseña larga. (Luego añadimos validaciones reales y backend).
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
